@@ -1,66 +1,61 @@
+//DOM elements
+
 const button = document.getElementById("btn");
 const btnDiv = document.querySelector(".button");
-const floor = document.querySelector(".floor");
-const box = document.getElementById('reward');
-const container = document.getElementsByClassName("container");
-const body = document.getElementById("body") 
+const title = document.querySelector(".challenge");
+const sun = document.getElementById('reward');
+const memeContainer = document.querySelector('.meme');
+const prince = document.querySelector(".prince-small");
 
+//Functions
 
 const thePrince = () => {
+    memeContainer.innerHTML = "";
     btnDiv.innerHTML = "";
-    box.innerHTML = "Hooray! You did it! Now live happily ever after :)";
-    button.classList.add("invisible")
+    sun.innerHTML = " Now you can live happily ever after :)";
     const newDiv = document.createElement('div');
     const princeIMG = document.createElement('img');
-    princeIMG.classList.add("prince-small")
+    princeIMG.classList.add("prince-small");
     princeIMG.src = "img/prince.png";
-    newDiv.appendChild(princeIMG)
-    button.appendChild(newDiv)
-    body.classList.add("rainbow")
+    newDiv.appendChild(princeIMG);
+    prince.appendChild(newDiv);
     setTimeout(() => {
         princeIMG.classList.add("prince-big");
-    }, 900)
-
+    }, 900);
+    title.innerHTML = "Hooray! You did it!";
+    button.removeEventListener('mouseenter', moveButton);
+    button.removeEventListener('click', thePrince);
 };
 
-
-
 const theMeme = () => {
-    const newDiv = document.createElement('div');
     const meme = document.createElement('img');
     meme.classList.add("meme");
     meme.src = "https://i.imgflip.com/2igauj.jpg";
-    newDiv.appendChild(meme);
-    box.appendChild(newDiv);
+    memeContainer.appendChild(meme);
 };
 
-
-
-let cont = 0;
-
+let count = 0;
 
 function moveButton() {
-    cont++;
+    count++;
     let randX = Math.floor(Math.random() * (window.innerWidth - 100));
-    if (cont < 10) {
+    if (count < 10) {
         button.animate([
             { transform: "scale(0.8)", "left": randX + "px" },
             { transform: "scale(1.2)", "bottom": 100 + "px" }
         ], { duration: 2000 })
-    } else if (cont == 10) {
+    } else if (count == 10) {
         theMeme();
     } else {
         button.animate([
             { "left": randX + "px" },
             { "bottom": 100 + "px" },
-
         ], { duration: 5000 })
-
     };
 };
+
+//Event Listeners
 
 button.addEventListener('mouseenter', moveButton);
 
 button.addEventListener('click', thePrince);
-
-// thePrince()
