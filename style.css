@@ -1,24 +1,113 @@
+*   {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+
+    background-image: url("img/field.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: 
+    " challenge "
+    " playground "
+}
+
+.challenge {
+    grid-area: challenge;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-  }
-
-body > section {
-    display: grid;
-    grid-template-areas: "title" "button";
-    grid-template-rows: 25% 75%;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-body > section > header {
-    grid-area: title;
-    text-align: center;
-    font-size: 4em;
+.playground {
+    background-image: url("img/rainbow.png");
+    /* animation: fadeIn ease 20s; */
 }
 
-body > section > button {
-    grid-area: button;
-    height: 4em;
-    font-size: 4em;
+.rainbow{
+    background-image: rainbow;
+}
+
+.reward  {
+    background-image: url("img/sun.png");
+    background-size: contain;
+    width: 350px;
+    height: 350px;
+    padding: 0 3em;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.reward img{
+    max-width: 200px;
+}
+
+.button-container {
+    background-image: url("frog.png");
+    background-size: contain;
+	background-repeat: no-repeat;
+    padding: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 25px;
+}
+
+.button     {
+    width: 100px;
+    height: 106px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+button:active{
+    outline: none
+}
+
+button:focus{
+    outline: none
+}
+
+.prince-small {
+    /* background-image: url("prince.png");
+    background-size: contain;
+	background-repeat: no-repeat; */
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+/* transition prince-small: from 100x100 to 400x400*/
+
+.prince-big {
+    /* background-image: url("prince.png");
+    background-size: contain;
+	background-repeat: no-repeat; */
+    transition: ease-in 3s ;
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+a   {
+    color: transparent;
 }
