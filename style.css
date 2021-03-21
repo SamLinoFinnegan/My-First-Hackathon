@@ -30,13 +30,12 @@ body {
 }
 
 .playground {
-    background-image: url("img/rainbow.png");
-    /* animation: fadeIn ease 20s; */
+    grid-area: playground;
 }
 
-.rainbow{
-    background-image: rainbow;
-}
+/* .rainbow{
+    background-image: url("img/rainbow.png");
+} */
 
 .reward  {
     background-image: url("img/sun.png");
