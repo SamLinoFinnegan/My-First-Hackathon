@@ -9,7 +9,7 @@ again and again, like frogs use to do. You get tired of chasing him around, but 
 This challenge is created by Darya, Sam en Saskia. Their idea was to make a button that jumps away
 when jou try to click it. When you finally succeed, something unexpected will happen. Our roles were:
 Saskia: html + css basic design & the idea of the frog prince. Samuel: javascript to catch the frog.
-Darya: css for the transition of the prince.
+Darya: css for the transition of the prince and combining Saskia's html and css with Samuel's JavaScript.
 
 ### Technicalities
 The code is written in Visual Studio Code and provided with comments. It's made with 1 html file,
